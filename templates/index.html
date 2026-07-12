@@ -1,14 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Approval Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-<h1>Loan Approval Prediction System</h1>
+<div class="container">
 
-<p>Welcome to our ML Project!</p>
+    <h1>🏦 Loan Approval Prediction System</h1>
+
+    <p class="subtitle">
+        Enter applicant details below to predict loan eligibility using a trained Machine Learning model.
+    </p>
+
+    <form id="loanForm">
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Gender</label>
+                <select id="Gender">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Married</label>
+                <select id="Married">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Dependents</label>
+                <input type="number" id="Dependents" min="0" max="3">
+            </div>
+
+            <div class="form-group">
+                <label>Education</label>
+                <select id="Education">
+                    <option value="1">Graduate</option>
+                    <option value="0">Not Graduate</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Self Employed</label>
+                <select id="Self_Employed">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Property Area</label>
+                <select id="Property_Area">
+                    <option value="0">Rural</option>
+                    <option value="1">Semiurban</option>
+                    <option value="2">Urban</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Applicant Income</label>
+                <input type="number" id="ApplicantIncome">
+            </div>
+
+            <div class="form-group">
+                <label>Coapplicant Income</label>
+                <input type="number" id="CoapplicantIncome">
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Loan Amount</label>
+                <input type="number" id="LoanAmount">
+            </div>
+
+            <div class="form-group">
+                <label>Loan Amount Term</label>
+                <input type="number" id="Loan_Amount_Term">
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Credit History</label>
+                <select id="Credit_History">
+                    <option value="1">Good</option>
+                    <option value="0">Bad</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <!-- Empty to keep alignment -->
+            </div>
+
+        </div>
+
+        <button type="submit">
+            🔍 Predict Loan
+        </button>
+
+    </form>
+
+    <div id="result"></div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>
